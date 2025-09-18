@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { Button } from '@/components/ui/enhanced-button';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/enhanced-card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Package, Mail, Lock, User } from 'lucide-react';
 
 interface RegisterFormProps {
@@ -26,10 +26,10 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onToggle }) => {
   };
 
   return (
-    <Card variant="gradient" className="w-full max-w-md animate-fade-in">
+    <Card className="w-full max-w-md animate-fade-in">
       <CardHeader className="text-center">
         <div className="flex justify-center mb-4">
-          <div className="h-12 w-12 rounded-full bg-gradient-primary flex items-center justify-center">
+          <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center">
             <Package className="h-6 w-6 text-white" />
           </div>
         </div>
@@ -87,7 +87,6 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onToggle }) => {
           </div>
           <Button 
             type="submit" 
-            variant="hero" 
             className="w-full" 
             disabled={isLoading}
           >

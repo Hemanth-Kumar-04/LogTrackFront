@@ -32,18 +32,18 @@ const Auth = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Branding & Features */}
-        <div className="text-white space-y-8 animate-fade-in">
+        <div className="text-foreground space-y-8 animate-fade-in">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="h-12 w-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <Package className="h-6 w-6 text-white" />
+              <div className="h-12 w-12 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center">
+                <Package className="h-6 w-6 text-primary" />
               </div>
               <h1 className="text-4xl font-bold">LogiTrack</h1>
             </div>
-            <p className="text-xl text-white/90 max-w-md">
+            <p className="text-xl text-muted-foreground max-w-md">
               Streamline your logistics operations with intelligent document processing and real-time tracking.
             </p>
           </div>
@@ -55,12 +55,12 @@ const Auth = () => {
                 className="flex items-start space-x-3 animate-fade-in"
                 style={{ animationDelay: `${(index + 1) * 200}ms` }}
               >
-                <div className="h-10 w-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="h-5 w-5 text-white" />
+                <div className="h-10 w-10 rounded-lg bg-primary/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">{feature.title}</h3>
-                  <p className="text-sm text-white/80">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </div>
               </div>
             ))}

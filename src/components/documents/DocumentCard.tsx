@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/enhanced-card';
-import { Button } from '@/components/ui/enhanced-button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Document } from '@/types/document';
 import { 
@@ -51,7 +51,7 @@ const DocumentCard: React.FC<DocumentCardProps> = ({ document, onDelete }) => {
   };
 
   return (
-    <Card variant="hover" className="w-full">
+    <Card className="w-full hover:shadow-lg transition-shadow">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-3">

@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Button } from '@/components/ui/enhanced-button';
-import { Card } from '@/components/ui/enhanced-card';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { documentsAPI } from '@/lib/api';
 import { toast } from '@/hooks/use-toast';
 import { Upload, FileText, Loader2 } from 'lucide-react';
@@ -49,7 +49,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess }) => {
   });
 
   return (
-    <Card variant="hover" className="p-8">
+    <Card className="p-8">
       <div
         {...getRootProps()}
         className={`

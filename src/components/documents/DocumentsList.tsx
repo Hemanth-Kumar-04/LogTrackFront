@@ -3,8 +3,8 @@ import { documentsAPI } from '@/lib/api';
 import { Document } from '@/types/document';
 import DocumentCard from './DocumentCard';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/enhanced-button';
-import { Card } from '@/components/ui/enhanced-card';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 import { Search, Package, Loader2 } from 'lucide-react';
 

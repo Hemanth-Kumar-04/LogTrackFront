@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Header from '@/components/layout/Header';
 import DocumentUpload from '@/components/documents/DocumentUpload';
 import DocumentsList from '@/components/documents/DocumentsList';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/enhanced-card';
-import { Button } from '@/components/ui/enhanced-button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Upload, 
@@ -67,7 +67,7 @@ const Dashboard = () => {
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
-            <Card key={stat.title} variant="hover" className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+            <Card key={stat.title} className="animate-fade-in hover:shadow-lg transition-shadow" style={{ animationDelay: `${index * 100}ms` }}>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">{stat.title}</CardTitle>
                 <div className={`h-8 w-8 rounded-full flex items-center justify-center ${stat.color}`}>
