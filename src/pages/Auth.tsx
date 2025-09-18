@@ -34,7 +34,7 @@ const Auth = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Branding & Features */}
+    
         <div className="text-foreground space-y-8 animate-fade-in">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -67,7 +67,7 @@ const Auth = () => {
           </div>
         </div>
 
-        {/* Right Side - Auth Form */}
+        
         <div className="flex items-center justify-center">
           {isLogin ? (
             <LoginForm onToggle={toggleForm} />

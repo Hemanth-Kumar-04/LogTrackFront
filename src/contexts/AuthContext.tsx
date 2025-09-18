@@ -37,7 +37,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const authToken = response.token;
       localStorage.setItem('authToken', authToken);
       
-      // Create user object (API doesn't return user details, so we'll use email)
+      
       const userData = { id: '1', name: email.split('@')[0], email };
       localStorage.setItem('user', JSON.stringify(userData));
       

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { documentsAPI } from '@/lib/api';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 interface DocumentCardProps {
   document: Document;
@@ -22,6 +23,7 @@ interface DocumentCardProps {
 }
 
 const DocumentCard: React.FC<DocumentCardProps> = ({ document, onDelete }) => {
+  const navigate = useNavigate();
   const handleDelete = async () => {
     try {
       await documentsAPI.delete(document._id);
@@ -124,7 +126,7 @@ const DocumentCard: React.FC<DocumentCardProps> = ({ document, onDelete }) => {
             <span>{new Date(document.date).toLocaleDateString()}</span>
           </div>
           
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => navigate(`/documents/${document._id}`)}>
             View Details
           </Button>
         </div>

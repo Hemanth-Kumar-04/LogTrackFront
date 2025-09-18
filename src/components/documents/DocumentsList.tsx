@@ -41,14 +41,22 @@ const DocumentsList: React.FC<DocumentsListProps> = ({ refreshTrigger }) => {
   }, [refreshTrigger]);
 
   useEffect(() => {
-    const filtered = documents.filter(doc =>
-      doc.shipment_id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.sender.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.receiver.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.destination.toLowerCase().includes(searchTerm.toLowerCase())
+  const filtered = documents.filter((doc) => {
+    const shipmentId = doc.shipment_id ?? "";
+    const sender = doc.sender ?? "";
+    const receiver = doc.receiver ?? "";
+    const destination = doc.destination ?? "";
+
+    return (
+      shipmentId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      sender.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      receiver.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      destination.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setFilteredDocuments(filtered);
-  }, [searchTerm, documents]);
+  });
+
+  setFilteredDocuments(filtered);
+}, [searchTerm, documents]);
 
   const handleDocumentDelete = () => {
     fetchDocuments();

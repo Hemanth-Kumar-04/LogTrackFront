@@ -6,11 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
+import DocumentDetails from "./pages/DocumentDetails";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Protected Route Component
+
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, isLoading } = useAuth();
   
@@ -25,7 +26,6 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   return user ? <>{children}</> : <Auth />;
 };
 
-// Public Route Component (only show if not authenticated)
 const PublicRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, isLoading } = useAuth();
   
@@ -58,7 +58,12 @@ const App = () => (
                 <Dashboard />
               </ProtectedRoute>
             } />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/documents/:id" element={
+              <ProtectedRoute>
+                <DocumentDetails />
+              </ProtectedRoute>
+            } />
+       
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
